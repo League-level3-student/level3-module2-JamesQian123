@@ -40,10 +40,10 @@ import processing.core.PApplet;
 public class _03_VisualArraySorter extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 400;
-
+    int[] arr;
     @Override
     public void settings() {
-        
+        size(600,600);
     }
 
     @Override
