@@ -54,6 +54,7 @@ public class ThanosSorter extends Sorter {
         		if(randomNumber == 1) {
         			int half = arr.length/2;
         			
+        			
         		}
         	}
         }
