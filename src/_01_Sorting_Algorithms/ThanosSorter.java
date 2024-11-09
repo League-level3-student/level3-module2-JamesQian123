@@ -49,14 +49,43 @@ public class ThanosSorter extends Sorter {
     void sort(int[] arr, SortingVisualizer display) {
     	Random rand = new Random();
     	int randomNumber = rand.nextInt(2);
-        for(int i = 0; i < arr.length; i++) {
-        	if(arr[i] > arr[i+1]) {
-        		if(randomNumber == 1) {
-        			int half = arr.length/2;
-        			
-        			
-        		}
-        	}
-        }
+    	
+    	while(!sorted(arr)) {
+    		try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		int number = 0;
+    		for(int i = 0; i < arr.length-1; i++) {
+    			if(arr[i] > arr[i+1]) {
+    				number = i;
+    				break;
+    			}
+    		}
+    		randomNumber = rand.nextInt(2);
+    		if(randomNumber == 0) {
+				for(int j = 0; j < number; j++) {
+					arr[j] = 0;
+				}
+			}
+			else if(randomNumber == 1) {
+				for(int k = number+1; k < arr.length; k++) {
+					arr[k] = 0;
+				}
+			}
+    		  display.updateDisplay();
+    	}
+    	
+    	
+    }
+    boolean sorted(int[] arr) {
+    	for(int i = 0; i < arr.length-1; i++) {
+    		if(arr[i] > arr[i+1]) {
+    			return false;
+    		}
+    	}
+    	return true;
     }
 }

@@ -28,9 +28,7 @@ public class _02_BinarySearch {
     			if(mid < value) {
     				return binarySearch(array, mid + 1, end, value);
     			}
-    			else {
-    				return -1;
-    			}
+ 
     		}
 
             // 3. create an integer called mid and set it equal
@@ -48,6 +46,6 @@ public class _02_BinarySearch {
             //    method. Use mid + 1 as the start, and pass in end.
 
         // 7. return -1 because the value was not found
-        return 0;
+        return -1;
     } 
 }
