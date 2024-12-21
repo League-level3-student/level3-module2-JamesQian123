@@ -82,17 +82,30 @@ public class Algorithms {
     	}
     	return false;
     }
-    public static double sortScores(List<Double> results) {
+    public static ArrayList<Double> sortScores(List<Double> results) {
+    	Double smallest;
     	ArrayList<Double> scores = new ArrayList();
-    	for(int i = 0; i < results.size(); i++) {
-    		if(results.get(i) > results.get(i+1)) {
-    			double s = results.get(i+1);
-    			double j = results.get(i);
-    			results.set(i+1, s);
-    			results.set(i, j);
-    			
-    			
-    		}
+    	for(int k =0; k < results.size();k++) {
+    		smallest = 100.0;
+	    	for(int i = 0; i < results.size(); i++) {
+	    		if(!(scores.contains(results.get(i)))&& results.get(i) < smallest) {
+	    			smallest = results.get(i);
+	    		}
+	    		
+	    	}
+	    	scores.add(smallest);
     	}
+    	return scores;
+    }
+    public static List<String> sortDNA(List<String> unsortedSequences){
+    	ArrayList<String> sortedSequences = new ArrayList();
+    	String longest = " ";
+    	for(String i:unsortedSequences) {
+    		if(!(sortedSequences.get((unsortedSequences(i)).length()) > longest.length())) {
+    			longest = i;
+    			
+    		}sortedSequences.add(i);
+    	}
+    	return sortedSequences;
     }
 }
