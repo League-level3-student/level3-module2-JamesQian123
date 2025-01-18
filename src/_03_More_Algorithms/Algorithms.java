@@ -1,6 +1,7 @@
 package _03_More_Algorithms;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -98,7 +99,7 @@ public class Algorithms {
     	return scores;
     }
     public static List<String> sortDNA(List<String> unsortedSequences){
-    	ArrayList<String> sortedSequences = new ArrayList();
+    	/*ArrayList<String> sortedSequences = new ArrayList();
     	String longest = " ";
     	for(String i:unsortedSequences) {
     		if(!(sortedSequences.get((unsortedSequences(i)).length()) > longest.length())) {
@@ -108,4 +109,26 @@ public class Algorithms {
     	}
     	return sortedSequences;
     }
+    */
+    	unsortedSequences.sort((s1,s2) -> {
+    		if(s1.length()>s2.length()) {
+    			return 1;
+    		}else if (s2.length() > s1.length()){
+    			return -1;
+    		}else {
+    			return 0;
+    		}
+    	});
+    	
+    	for(String s : unsortedSequences) {
+    		return unsortedSequences;
+    	}
+    	return null;
+}
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		Collections.sort((words));
+		return words;
+	}
+    
 }
