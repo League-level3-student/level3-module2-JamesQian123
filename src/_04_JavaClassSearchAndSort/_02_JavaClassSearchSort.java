@@ -25,11 +25,17 @@ public class _02_JavaClassSearchSort {
     public static Boolean arraySearch(char[] arr, char key) {
         Arrays.sort(arr);
         int index = Arrays.binarySearch(arr, key);
-        return index;
+        if(index > -1) {
+        	return true;
+        }
+        return false;
     }
-    
     public static Boolean listSearch(List<Character> list, Character key) {
-        
-        return null;
+        Collections.sort(list);
+        int index = Collections.binarySearch(list, key);
+        if(index >-1) {
+        	return true;
+        }
+        return false;
     }
 }
